@@ -1,0 +1,45 @@
+<div  id="header">
+    <div class="p-3 bg-dark text-white">
+       <div  class="container">
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+             <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+                   <use xlink:href="#bootstrap"></use>
+                </svg>
+             </a>
+             <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <div id ="orderId" class="navbar-brand"></div>
+                <ul class="navbar-nav mr-auto">
+                   <li class="nav-item active">
+                      <a id="customerName" class="nav-link" href="#"></a>
+                   </li>
+                   <li class="nav-item">
+                      <a id="locationName" class="nav-link" href="#"></a>
+                   </li>
+                </ul>
+                <ul class="navbar-nav mr-right">
+                   <li class="nav-item active">
+                      <a class="nav-link" href="#">
+                         H
+                   </li>
+                   <li class="nav-item active">
+                   <a class="nav-link" href="#">G</a>
+                   </li>
+                </ul>
+             </nav>
+          </div>
+       </div>
+    </div>
+ </div>
+
+
+
+
+const orderId = document.getElementById("orderId");
+orderId.innerHTML = 'Order #: ' + __kp_Order;
+
+const customerName = document.getElementById("customerName");
+customerName.innerHTML = NameCustomer;
+
+const locationName = document.getElementById("locationName");
+locationName.innerHTML = LocationName;

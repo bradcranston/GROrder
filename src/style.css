@@ -1,45 +1,55 @@
-body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: 'Arial', sans-serif;
-  font-size: 16px;
-  line-height: 1;
-  color: #000;
-  background-color: #fff;
-  margin: 10;
-  overflow: hidden;
-}
 
-p{
-  color:#282828;
+
+.btn-primary,.btn-primary:hover,.btn-primary:focus,.btn-primary:active {
+  color: white;
+  background-color: hsl(61, 86%, 30%);
+  border-color: white;
+  border-top-width: 3px;
+  border-radius: 0px;
   font-size: 16px;
 }
 
-
-h1 {
-  background-color:#006690;
-  color: #fff;
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 1.2;
-  margin: 0 0 10px;
+.btn-danger,.btn-danger:hover,.btn-danger:focus,.btn-danger:active {
+  color: white;
+  background-color: red;
+  border-color: white;
+  border-top-width: 3px;
+  border-radius: 0px;
+  font-size: 16px;
 }
 
-.tintedBlackLeft {
-  background-color:#00000033;
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 1.2;
-  padding:11px 11px 11px 0px;
+li{
+  border-width: 1px;
+  border-color: gray;
 }
 
-button {
-  padding: 5px 9px 5px 9px;
-  border-radius: 3px;
-  font-size: 18px;
-  border: 1px solid #0091CE;
-  background-color: #0091CE;
-  color: #fff;
+.contactContainer{
+  overflow:scroll;
+  height: 280px;
+}
+
+
+.AddressLabel{
+  float:left;
+  width: 75px;
+  text-align: right;
+}
+
+.align-right{
+  text-align: right;
+}
+
+.AddressDiv{
+  left:12px;
+  float:left;
+  position: relative;
+}
+
+.alertDiv{
+  height: 40px;
+  background-color: orange;
+  color: white;
+  text-align: center;
+  line-height: 40px;
+  font-size: 20px;
 }
