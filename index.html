@@ -3,18 +3,16 @@
    <head>
       <meta charset="UTF-8" />
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link href="https://cdn.datatables.net/v/bm/jq-3.7.0/dt-2.0.4/af-2.7.0/b-3.0.2/date-1.5.2/fc-5.0.0/fh-4.0.1/rg-1.5.0/sc-2.4.1/sl-2.0.1/datatables.min.css" rel="stylesheet">
       <style>
          @import "./src/style.css";
       </style>
       <title>JSDev</title>
    </head>
    <body>
-
-
    <div  id="header"></div>
-
 <div class="container-fluid">
-
   <div class="row">
       <div class="container-fluid bg-whit col-10 flex">
          <div class="row">
@@ -58,8 +56,6 @@
             <ul class="list-inline pl-3">
                <li class="list-inline-item"><strong>Assigned MPs:</strong> <span id="mps"></span></li>
             </ul>
-         
-
       <div class="container-fluid bg-whit col-12 flex">
         <div class="row">
         <ul class="list-inline col-6">
@@ -71,90 +67,36 @@
           <div class="clearfix"></div>
           <li class="list-inline-item" id="installAdd"></li>
        </ul>
-      
-
-
        <ul class="list-inline col-6">
         <li class="list-inline-item"><strong>Contacts</strong></li>
         <div id="all_contact" class="contactContainer"/>
      </ul>
-
     </div>
+   </div>
+</div>
+</div>
+<div id="sidebarMenu" class="bg-whit col-2 d-md-block sidebar collapse">
+   <button id="btnStatus" type="button" class="btn btn-primary col-12">Change Status</button>
+   <button id="btnEmail" type="button" class="btn btn-primary col-12">Email MPs</button>
+   <button id="btnShipping" type="button" class="btn btn-primary col-12">Shipping Details</button>
+   <button id="btnVersions" type="button" class="btn btn-primary col-12">Order Versions</button>
+   <button id="btnForms" type="button" class="btn btn-primary col-12">Forms</button>
+   <button id="btnNotes" type="button" class="btn btn-primary col-12">System Notes</button>
+   <button id="btnSplitMerge" type="button" class="btn btn-primary col-12">Split/Merge</button>
+   <button id="btnInvoice" type="button" class="btn btn-primary col-12">Invoice</button>
+   <button id="btnDelete" type="button" class="btn btn-danger col-12">Delete</button>
+</div>
+</div>
+
+<table id="table" class="row-border" style="width:100%">
+   </div>
+   <div id="totals"></div>
 
 
-    <ul id="lineItems" class="list-inline pl-3 col-12">
-        <li class="list-inline-item"><strong>Line Items</strong></li>
-        <div class="clearfix"></div>
-        <li> 
-          <strong>
-          <span class="list-inline-item col-1">Qty</span>
-          <span class="list-inline-item col-6">Description</span>
-          <span class="list-inline-item col-2">W x H</span>
-          <span class="list-inline-item col-1">Price</span>
-          <span class="list-inline-item col-1">Amount</span>
-        </strong>
-        </li>
-
-
-</ul>
-
-
-
-    </div>
-      
-    </div>
-
-
-
-
-         
-      </div>
-
-      <div id="sidebarMenu" class="bg-whit col-2 d-md-block sidebar collapse">
-         <button id="btnStatus" type="button" class="btn btn-primary col-12">Change Status</button>
-         <button id="btnEmail" type="button" class="btn btn-primary col-12">Email MPs</button>
-         <button id="btnShipping" type="button" class="btn btn-primary col-12">Shipping Details</button>
-         <button id="btnVersions" type="button" class="btn btn-primary col-12">Order Versions</button>
-         <button id="btnForms" type="button" class="btn btn-primary col-12">Forms</button>
-         <button id="btnNotes" type="button" class="btn btn-primary col-12">System Notes</button>
-         <button id="btnSplitMerge" type="button" class="btn btn-primary col-12">Split/Merge</button>
-         <button id="btnInvoice" type="button" class="btn btn-primary col-12">Invoice</button>
-         <button id="btnDelete" type="button" class="btn btn-danger col-12">Delete</button>
-      </div>
-
-
-
-
-
-
-      
-    </div>
-
-
-    <div class="row">
-
-
-
-      <div class="container-fluid bg-whit col-6 flex">
-
-
-      </div>
-
-    </div>
-
-
-
-  </div>
-
-
-
-
-
-      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-      <script type="module">
+      <script src="https://cdn.datatables.net/v/bm/jq-3.7.0/dt-2.0.4/af-2.7.0/b-3.0.2/date-1.5.2/fc-5.0.0/fh-4.0.1/rg-1.5.0/sc-2.4.1/sl-2.0.1/datatables.min.js"></script>
+<script type="module">
          import "./src/index.js";
       </script>  
-   </body>
+        </body>
 </html>
