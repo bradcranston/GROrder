@@ -21,14 +21,16 @@ window.loadData = (json) => {
     BillAddress2,
     Shipping_Cost,
     BillCityStateZip,
-    BillContact,
+    BillLocationName,
     ShipAddress1,
     ShipAddress2,
     ShipCityStateZip,
-    ShipContact,
+    ShipCompany,
     PhysicalAddress1,
     PhysicalAddress2,
     PhysicalCityStateZip,
+    CommentsCSS,
+    UnPrintedNotesCSS
   } = data.fieldData;
   const { ContactPortal } = data.portalData;
   const { OrdersLineItems } = data.portalData;
@@ -69,7 +71,7 @@ window.loadData = (json) => {
   billingAddDiv.classList.add("AddressLabel");
   const billingAdd = document.createElement("div");
   billingAdd.classList.add("AddressDiv");
-  billingAdd.insertAdjacentHTML("beforeend", BillContact);
+  billingAdd.insertAdjacentHTML("beforeend", BillLocationName);
   billingAdd.insertAdjacentHTML("beforeend", "<br>" + BillAddress1);
   if (BillAddress2.length > 0) {
     billingAdd.insertAdjacentHTML("beforeend", "<br>" + BillAddress2);
@@ -84,7 +86,7 @@ window.loadData = (json) => {
   shippingAddDiv.classList.add("AddressLabel");
   const shippingAdd = document.createElement("div");
   shippingAdd.classList.add("AddressDiv");
-  shippingAdd.insertAdjacentHTML("beforeend", ShipContact);
+  shippingAdd.insertAdjacentHTML("beforeend", ShipCompany);
   shippingAdd.insertAdjacentHTML("beforeend", "<br>" + ShipAddress1);
   if (ShipAddress2.length > 0) {
     shippingAdd.insertAdjacentHTML("beforeend", "<br>" + ShipAddress2);
@@ -181,12 +183,14 @@ const formatter = new Intl.NumberFormat('en-US', {
   priceExtSpan.innerHTML = formatter.format(totalPriceExt);
   priceExtDiv.appendChild(priceExtSpan);
   totalDiv.appendChild(priceExtDiv);
+
+  let DiscountPercentDisplay = DiscountPercent || 0;
   
   const discountDiv = document.createElement("div");
   discountDiv.classList.add("priceChild");
   const discountSpan = document.createElement("span");
   const discount = Discount;
-  discountDiv.innerHTML = '<strong>Discount('+parseFloat(DiscountPercent).toFixed(0)+"%"+') </strong>';
+  discountDiv.innerHTML = '<strong>Discount('+parseFloat(DiscountPercentDisplay).toFixed(0)+"%"+') </strong>';
   discountSpan.classList.add("priceList");
   discountSpan.innerHTML = formatter.format(discount);
   discountDiv.appendChild(discountSpan);
@@ -221,6 +225,54 @@ const formatter = new Intl.NumberFormat('en-US', {
   orderTotalSpan.innerHTML = orderTotal;
   orderTotalDiv.appendChild(orderTotalSpan);
   totalDiv.appendChild(orderTotalDiv);
+
+const btnAddress = document.getElementById("btnAddress");
+btnAddress.innerHTML = "Edit";
+btnAddress.onclick = function () {
+  runScript("btn|addressEdit");
+};
+
+
+const btnContactEdit = document.getElementById("btnContactEdit");
+btnContactEdit.innerHTML = "Edit";
+btnContactEdit.onclick = function () {
+  runScript("btn|contactEdit");
+};
+
+const btnUnNotes = document.getElementById("btnUnNotes");
+btnUnNotes.innerHTML = "Edit";
+btnUnNotes.onclick = function () {
+  runScript("btn|unNotes");
+};
+
+const btnComment = document.getElementById("btnComment");
+btnComment.innerHTML = "Edit";
+btnComment.onclick = function () {
+  runScript("btn|comment");
+};
+
+const btnLineEdit = document.getElementById("btnLineEdit");
+btnLineEdit.innerHTML = "Edit";
+btnLineEdit.onclick = function () {
+  runScript("btn|lineEdit");
+};
+
+
+
+
+const unNotesDivParent = document.getElementById("unNotes");
+const unNotes = document.createElement("div");
+unNotes.classList.add("noteLabel");
+unNotes.innerHTML = '<br>' + UnPrintedNotesCSS;
+unNotesDivParent.appendChild(unNotes);
+
+const commentsDivParent = document.getElementById("comments");
+const comments = document.createElement("div");
+comments.innerHTML = '<br>' + CommentsCSS;
+commentsDivParent.appendChild(comments);
+
+
+
 
 
   const table = $("#table").DataTable({

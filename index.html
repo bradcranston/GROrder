@@ -59,7 +59,7 @@
       <div class="container-fluid bg-whit col-12 flex">
         <div class="row">
         <ul class="list-inline col-6">
-          <li class="list-inline-item"><strong>Addresses</strong></li>
+          <li class="list-inline-item"><strong>Addresses</strong><button id="btnAddress" class="btn btn-primary btnAddress"></button></li>
           <div class="clearfix"></div>
           <li class="list-inline-item" id="billingAdd"></li>
           <div class="clearfix"></div>
@@ -68,7 +68,7 @@
           <li class="list-inline-item" id="installAdd"></li>
        </ul>
        <ul class="list-inline col-6">
-        <li class="list-inline-item"><strong>Contacts</strong></li>
+        <li class="list-inline-item"><strong>Contacts</strong><button id="btnContactEdit" class="btn btn-primary btnAddress"></button></li>
         <div id="all_contact" class="contactContainer"/>
      </ul>
     </div>
@@ -88,6 +88,17 @@
 </div>
 </div>
 
+<div class="container-fluid bg-whit col-12 flex bottomPadding">
+   <div class="row">
+      <div class="col-6 noteLabel">
+<div class="floatLeft"><strong>Unpublished Notes</strong><button id="btnUnNotes" class="btn btn-primary btnLineEdit"></button></div><div id="unNotes"></div>
+      </div>
+      <div class="col-6">
+<div class="floatLeft"><strong>Notes</strong><button id="btnComment" class="btn btn-primary btnLineEdit"></button></div><div id="comments"></div>
+</div></div></div>
+<div class="clearfix"></div>
+
+<div class="floatLeft"><strong>Line Items</strong></div><button id="btnLineEdit" class="btn btn-primary btnLineEdit"></button>
 <table id="table" class="row-border" style="width:100%">
    </div>
    <div id="totals"></div>

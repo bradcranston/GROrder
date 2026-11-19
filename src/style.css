@@ -23,6 +23,73 @@ table, td, tr{
   border-collapse: collapse
 }
 
+.btnLineEdit{
+  margin-left: 20px;
+  font-size: 12px;
+  padding: 0px 5px 0px 5px;
+  border-top-width: 0px;
+}
+
+.floatLeft{
+  float:left
+}
+
+.floatRight{
+  float:right
+}
+
+.btnLineEdit:hover{
+  margin-left: 20px;
+  font-size: 12px;
+  padding: 0px 5px 0px 5px;
+  border-top-width: 0px;
+}
+
+.btnAddress{
+  margin-left: 20px;
+  font-size: 12px;
+  padding: 0px 5px 0px 5px;
+  border-top-width: 0px;
+}
+
+.btnAddress:hover{
+  margin-left: 20px;
+  font-size: 12px;
+  padding: 0px 5px 0px 5px;
+}
+
+.btnContactView{
+  margin-left: 50px;
+  font-size: 12px;
+  padding: 0px 5px 0px 5px;
+}
+
+.btnContactView:hover{
+  margin-left: 50px;
+  font-size: 12px;
+  padding: 0px 5px 0px 5px;
+}
+
+.btnContactEdit{
+  margin-left: 5px;
+  font-size: 12px;
+  padding: 0px 5px 0px 5px;
+}
+
+.btnContactEdit:hover{
+  margin-left: 5px;
+  font-size: 12px;
+  padding: 0px 5px 0px 5px;
+}
+
+.noteLabel{
+  padding-left: 0;
+}
+.bottomPadding{
+  padding-bottom: 15px;
+}
+
+
 td{
   padding: 0px 10px 0px 10px;
 }
